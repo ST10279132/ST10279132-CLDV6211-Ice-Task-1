@@ -1,0 +1,25 @@
+﻿<!-- Views/Home/Index.cshtml -->
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.Label("Password")
+        @Html.Password("password", null, new { @class = "form-control" })
+        @Html.ValidationMessage("password")
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+}
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <p class="text-danger">@ViewBag.ErrorMessage</p>
+}
+azwqsa

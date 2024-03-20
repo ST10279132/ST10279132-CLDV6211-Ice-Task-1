@@ -1,0 +1,25 @@
+﻿<!-- Views/Appointment/Index.cshtml -->
+@model List<AppointmentSystem.Models.Appointment>
+
+@{
+    ViewBag.Title = "Appointments";
+}
+
+<h2>Appointments</h2>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Date & Time</th>
+        <th>Location</th>
+    </tr>
+    @foreach (var appointment in Model)
+    {
+        <tr>
+            <td>@appointment.Title</td>
+            <td>@appointment.DateTime.ToString("MM/dd/yyyy hh:mm tt")</td>
+            <td>@appointment.Location</td>
+        </tr>
+    }
+</table>
+
